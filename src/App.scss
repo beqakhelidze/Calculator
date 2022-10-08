@@ -1,0 +1,118 @@
+$WindowBarColor: #0047ab;
+$WindowTextColor: #6495ed;
+$BackgroundColor: #b3c0ff;
+$Orange: rgb(255, 145, 0);
+$red: #ff1744;
+$Blue: #2196f3;
+$Grey: #fff;
+
+@import "https://fonts.googleapis.com/css?family=Share+Tech+Mono";
+
+@font-face {
+  font-family: "Digital";
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot");
+  src: url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.eot?#iefix") format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.woff") format("woff"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/8e22783d707ad140bffe18b2a3812529.svg#Digital-7") format("svg");
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+#root {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  background-color: $BackgroundColor;
+  height: 100%;
+}
+
+.Calculator {
+  background-color: #1A1B1E;
+  color: white;
+  text-align: right;
+  padding: 15px;
+  font-family: Digital;
+  width: 320px;
+  border-radius: 8px;
+
+
+  .Screen {
+    margin: 15px 0px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #007e2e;
+    .Whole {
+      overflow-wrap: break-word;
+      color: $Orange;
+    }
+
+    .Current {
+      color: white;
+    }
+
+    .Whole,
+    .Current {
+      font-size: 30px;
+      padding: 4px;
+    }
+  }
+
+  .Buttons {
+    display: grid;
+    gap: 5px;
+    grid-template-areas:
+      "AC AC another another"
+      "None None None Plius"
+      "None None None Minus"
+      "None None None Equal"
+      "Null Null Comma Equal";
+
+    button {
+      background-color: $Grey;
+      padding: 20px;
+      font-size: 20px;
+      outline: none;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      transform: scale(1.04);
+    }
+  }
+
+  .AC {
+    grid-area: AC;
+    background-color: $red  !important;
+  }
+
+  .Equal {
+    background-color: $Blue  !important;
+    grid-area: Equal;
+  }
+
+  .Null {
+    grid-area: Null;
+  }
+}
+
+@media only screen and (max-width: 600px) {}
